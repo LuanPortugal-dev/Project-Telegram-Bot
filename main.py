@@ -30,3 +30,9 @@ class TelegramBot(self):
             link_requisicao = f'{link_requisicao}&offset={update_id + 1}'
         resultado = requests.get(link_requisicao)
         return json.loads(resultado.content)
+
+
+# Respondendo as mensagens
+def responder(self, resposta, chat_id):
+        link_envio = f'{self.url_base}sendMessage?chat_id={chat_id}&text={resposta}'
+        requests.get(link_envio)
