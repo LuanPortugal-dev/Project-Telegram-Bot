@@ -4,7 +4,7 @@ import json
 import os
 
 # Inicializando a conexão com API
-class TelegramBot(self):
+class TelegramBot:
     def __init__(self):
         token = '1617152764:AAEfEZThYahcfARvQDSy7em-WlQr8gFfmNg'
         self.url_base = f'https://api.telegram.org/bot{token}/'
@@ -63,3 +63,5 @@ def responder(self, resposta, chat_id):
         link_envio = f'{self.url_base}sendMessage?chat_id={chat_id}&text={resposta}'
         requests.get(link_envio)
 
+bot = TelegramBot()
+bot.Iniciar()
